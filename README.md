@@ -1,66 +1,21 @@
-## Foundry
+## Timestamper Contract
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The timestamper contract is a simple data structure that allows for a user to timestamp a piece of data using [@openzeppelin's EnumerableSet's library](https://docs.openzeppelin.com/contracts/5.x/api/utils#EnumerableSet). It is a simple wrapper around the library that allows for a user to timestamp a piece of data and then retrieve the timestamped data.
 
-Foundry consists of:
+This can be used instead of a NOM-151 certificate from a trusted timestamping authority.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## Getting started
 
-## Documentation
+Install dependencies with
 
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+forge install
 ```
 
-### Test
+To run tests, you'll need to setup the /keys directory. Follow its [README](./keys/README.md) for more information.
 
-```shell
-$ forge test
-```
+Once keys are set, run tests with:
 
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge clean && forge test
 ```
