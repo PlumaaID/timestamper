@@ -8,6 +8,8 @@ import {Initializable} from "@openzeppelin/contracts-upgradeable/proxy/utils/Ini
 contract Timestamper is Initializable {
     using EnumerableSet for EnumerableSet.Bytes32Set;
 
+    event Timestamped(bytes32 indexed value);
+
     // keccak256(abi.encode(uint256(keccak256("plumaa.storage.Timestamper")) - 1)) & ~bytes32(uint256(0xff))
     bytes32 constant TIMESTAMPER_STORAGE =
         0x391c9d9ce53acc5654eaa0597db7992d95154cb300ed1a83c2c94608cc029600;
@@ -26,6 +28,7 @@ contract Timestamper is Initializable {
 
     /// @notice Timestamps a value.
     function add(bytes32 newValue) external returns (bool) {
+        emit Timestamped(newValue);
         return _getTimestamperStorage().mySet.add(newValue);
     }
 
