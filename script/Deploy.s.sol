@@ -11,7 +11,7 @@ import {Timestamper} from "~/Timestamper.sol";
 contract Deploy is BaseScript {
     function run() public broadcast {
         Upgrades.deployTransparentProxy(
-            "src/Timestamper.sol:Timestamper",
+            "Timestamper.sol:Timestamper",
             address(broadcaster),
             abi.encode(Timestamper.setupTimestamper.selector)
         );
