@@ -1,5 +1,8 @@
 ## Timestamper Contract
 
+> [!IMPORTANT]  
+> Project is unmantained. Replaced with [Plumaa ID protocol](https://github.com/PlumaaID/protocol).
+
 The timestamper contract is a simple data structure that allows for a user to timestamp a piece of data using [@openzeppelin's EnumerableSet's library](https://docs.openzeppelin.com/contracts/5.x/api/utils#EnumerableSet). It is a simple wrapper around the library that allows for a user to timestamp a piece of data and then retrieve the timestamped data.
 
 This can be used instead of a NOM-151 certificate from a trusted timestamping authority.
